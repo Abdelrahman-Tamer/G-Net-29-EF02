@@ -14,5 +14,8 @@ public class RegistrationConfig : IEntityTypeConfiguration<Registration>
         builder.HasOne(r => r.Event)
                .WithMany(e => e.Registrations)
                .HasForeignKey(r => r.EventId);
+
+        builder.Property(r => r.RegisteredAt)
+               .HasDefaultValueSql("GETDATE()");
     }
 }

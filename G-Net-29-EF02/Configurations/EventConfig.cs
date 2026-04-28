@@ -17,5 +17,11 @@ public class EventConfig : IEntityTypeConfiguration<Event>
                .WithMany(e => e.Sessions)
                .HasForeignKey(e => e.ParentEventId)
                .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Property(e => e.CreatedAt)
+       .HasDefaultValueSql("GETDATE()");
+
+        builder.Property(e => e.LastModified)
+               .HasDefaultValueSql("GETDATE()");
     }
 }

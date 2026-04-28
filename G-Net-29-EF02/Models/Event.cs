@@ -19,4 +19,7 @@ public class Event
     public List<Event> Sessions { get; set; } = new();
 
     public List<Registration> Registrations { get; set; } = new();
+
+    public DateTime CreatedAt { get; set; }
+    public DateTime LastModified { get; set; }
 }
