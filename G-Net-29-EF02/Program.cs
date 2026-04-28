@@ -1,10 +1,10 @@
-﻿namespace G_Net_29_EF02
+class Program
+{
+    static void Main()
     {
-    internal class Program
-        {
-        static void Main( string[] args )
-            {
-            Console.WriteLine("Hello, World!");
-            }
-        }
+        using var context = new AppDbContext();
+        context.Database.EnsureCreated();
+
+        Console.WriteLine("Database Created 👍");
     }
+}
